@@ -6,10 +6,12 @@ export const useTodoStore = defineStore('todo', () => {
   const todos = ref([])
 
   function addTodo() {
-    if (todo.value.length > 0) {
+    const trimmedText = todo.value.trim()
+
+    if (trimmedText.length > 0) {
       const newTodo = {
         id: todos.value.length + 1,
-        text: todo.value,
+        text: trimmedText,
         status: 'not-done',
         editing: false
       }

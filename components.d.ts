@@ -12,5 +12,6 @@ declare module 'vue' {
     BaseIcon: typeof import('./src/components/base/BaseIcon.vue')['default']
     BaseTable: typeof import('./src/components/base/BaseTable.vue')['default']
     ListTodo: typeof import('./src/components/ListTodo.vue')['default']
+    TableTodo: typeof import('./src/components/TableTodo.vue')['default']
   }
 }

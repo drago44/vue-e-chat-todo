@@ -7,7 +7,7 @@ const { todo } = storeToRefs(todoStore)
 const { addTodo } = todoStore
 </script>
 <template>
-  <div class="add-todo">
+  <div class="todo__add">
     <input v-model="todo" placeholder="Add a new todo..." @keyup.enter="addTodo" />
     <BaseButton variant="add" @click="addTodo">
       <BaseIcon variant="add" />
@@ -17,7 +17,7 @@ const { addTodo } = todoStore
 </template>
 
 <style lang="scss">
-.add-todo {
+.todo__add {
   display: flex;
   align-items: center;
   justify-content: space-between;

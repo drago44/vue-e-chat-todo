@@ -12,7 +12,7 @@ const todoStore = useTodoStore()
           {{ todoStore.todos.length }}
         </div>
         <AddTodo />
-        <ListTodo />
+        <TableTodo />
       </div>
     </section>
   </main>

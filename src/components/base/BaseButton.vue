@@ -2,41 +2,31 @@
 import { computed } from 'vue'
 
 const props = defineProps({
-  loading: {
-    type: Boolean,
-    default: false
-  },
-  disabled: {
-    type: Boolean,
-    default: false
-  },
   defaultClass: {
     type: String,
     default: 'button'
   },
   variant: {
     type: String,
-    default: 'transparent',
+    default: 'button',
     validator: function (value) {
-      return ['delete', 'edit', 'add', 'save'].indexOf(value) !== -1
+      return ['delete', 'edit', 'add', 'button'].indexOf(value) !== -1
     }
   }
 })
 
 const variantClass = computed(() => {
   return {
-    button: props.variant === 'transparent',
-    'button--border': props.variant === 'border',
+    button: props.variant === 'button',
     'button--delete': props.variant === 'delete',
     'button--edit': props.variant === 'edit',
-    'button--add': props.variant === 'add',
-    'button--status': props.variant === 'status'
+    'button--add': props.variant === 'add'
   }
 })
 </script>
 
 <template>
-  <button :disabled="loading || disabled" :class="[defaultClass, variantClass]">
+  <button type="button" :class="[defaultClass, variantClass]">
     <slot />
   </button>
 </template>
@@ -154,22 +144,6 @@ const variantClass = computed(() => {
 
     &:hover {
       color: red;
-    }
-  }
-
-  &--status {
-    width: 140px;
-
-    .complete {
-      color: lightgreen;
-    }
-    &:before {
-      background: linear-gradient(45deg, green, darkgreen);
-      background-size: 400%;
-    }
-
-    &:hover {
-      color: lightgreen;
     }
   }
 }

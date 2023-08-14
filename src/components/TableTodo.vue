@@ -57,10 +57,6 @@ onMounted(() => {
             </td>
             <td>
               <div class="todo-list__actions">
-                <BaseButton variant="delete" @click="deleteTodo(todo.id)">
-                  <BaseIcon variant="delete" />
-                  <span>Delete</span>
-                </BaseButton>
                 <BaseButton variant="edit" @click="startEditing(todo)">
                   <BaseIcon variant="edit" />
                   <span>Edit</span>
@@ -86,7 +82,11 @@ onMounted(() => {
             </td>
             <td>
               <div class="todo-list__actions">
-                <BaseButton variant="save" @click="saveEdited(todo)">
+                <BaseButton variant="delete" @click="deleteTodo(todo.id)">
+                  <BaseIcon variant="delete" />
+                  <span>Delete</span>
+                </BaseButton>
+                <BaseButton @click="saveEdited(todo)">
                   <BaseIcon variant="edit" />
                   <span>Save</span>
                 </BaseButton>
